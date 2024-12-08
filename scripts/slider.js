@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slides = [
         {
             bgText: "AUDI",
-            imageSrc: "/photos/Car-PNG-Photos 1.png",
+            imageSrc: "/photos/audi.png",
         },
         {
             bgText: "TOYOTA",
