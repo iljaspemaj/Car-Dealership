@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Car Dealership - Shop</title>
+        <link rel="stylesheet" href="/styles/shop.css">
+        
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="navbar-links">
+            <li> <a href="#">Home</a></li>
+            <li> <a href="#brands">Brands</a></li>
+           <li> <a href="#explore">Explore</a></li>
+        </ul>
+        
+        <div class="navbar-logo">
+            <img src="/photos/Mask group.png" alt="Makerminds Logo">
+            <span>
+                <span class="car">Car</span>
+                <span class="dealership">Dealership</span>
+            </span>
+        </div>
+        
+        <ul class="navbar-links">
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <main class="add-new-vehicle">
+        <div>
+        <p><a href="index.html">Home</a> &gt; Shop</p>
+    </div>
+     <!-- Main Section -->
+
+    <!-- Filter Section -->
+        <section id="filter-section">
+            <h1>Filters</h1>
+            <h3>Mark:</h3>
+            <select name="filters" id="filters" title="Select a car category" onchange="updateCarItems()">
+            <option value="all">All</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Ford F-150">Ford</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Chevrolet">Chevrolet</option>
+            </select>
+            
+            <div class="price-range">
+                <div class="price-input">
+                    <label for="price-min">Price Range:</label>
+                    <input type="text" id="price-min" placeholder="Min">
+                </div>
+                <div class="price-input">
+                    <label for="price-max">Price Range:</label>
+                    <input type="text" id="price-max" placeholder="Max">
+                </div>
+            </div>
+        </section>
+        <!-- Filter Section -->
+
+         <!-- Products Section -->
+    <section id="products-section">
+        <h1>Cars</h1>
+    <ul id="car-items">
+    </ul>
+    </section>
+
+    <!-- Products Section -->
+
+    <!-- Cart Section -->
+    <section id="cart-section">
+        <h1>Cart</h1>
+            <ul id="cart-items">
+            </ul>
+        <hr>
+        <div id="cart-total">
+            <span>Total: $<span id="total-price">0</span></span>
+        </div>
+    
+        <div id="cart-actions">
+            <button id="sell-button">Sell</button>
+            <button id="cancel-button">Cancel</button>
+        </div>
+    </section>
+   <!-- Cart Section -->
+
+    <!-- Add Vehicle Section -->
+    <section id="add-car-section">
+        <h1>Add Car</h1>
+        <div class="mark-model">
+        <label for="mark">Mark:</label>
+        <input type="text" id="mark" placeholder="Mark name...">
+        <label for="model">Model:</label>
+        <input type="text" id="model" placeholder="Model name...">
+    </div>
+        <div class="price-url">
+            <div class="price-input">
+                <label for="price">Price:</label>
+                <input type="text" id="price" placeholder="ex. 24000">
+            </div>
+            <div class="price-input">
+                <label for="image-url">Image url</label>
+                <input type="text" id="image-url" placeholder="url here...">
+            </div>
+        </div>
+        <button class="modern button" id="add-vehicle-button">
+            Add Vehicle
+        </button>
+    </section>
+    <!-- Add Vehicle Section -->
+</main>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="payment-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h1>Payment</h1>
+            <hr>
+            <div class="payment-details">
+                <form id="payment-form">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" 
+                placeholder="Enter card number" required>
+            
+                <div class="expiration-cvv-container">
+                    <div>
+                        <label for="expiration-date">Expiration Date:</label>
+                        <input type="text" id="expiration-date" placeholder="MM/YY">
+                    </div>
+            
+                    <div>
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" placeholder="CVV" required>
+                    </div>
+                </div>
+            </form>
+            </div>
+            
+        
+    <button type="submit" id="pay-button" onclick="confirmPayment(event)">Confirm Payment</button>
+            <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
+        </div>
+    </section>
+    <!-- Payment Section -->
+
+    <!-- Payment Successfull -->
+     <section class="payment-success-section">
+        <div>
+            <h1>Order has been paid successfully</h1>
+            <p><i class="fa-solid fa-circle-check"></i></p>
+        </div>
+    </section>
+    <!-- Payment Successfull -->
+
+    <script src="/scripts/products.js"></script>
+    <script src="/scripts/cart.js"></script>
+    <script src="/scripts/addCar.js"></script>
+    <script src="/scripts/payment.js"></script>
+    <script src="/server.js"></script>
+
+<!-- Toastify script -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+</html>

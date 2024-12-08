@@ -1,0 +1,544 @@
+@import url(variabla.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-white);
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.navbar-links{
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+}
+
+.navbar-links a {
+    color: #666872;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: var(--primary-red);
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.navbar-logo img {
+    height: 40px;
+}
+
+.navbar-logo .car {
+    font-size: 30px;
+    color: var(--primary-dark);
+}
+
+.navbar-logo .dealership {
+    font-size: 20px;
+    color: var(--primary-red);
+}
+
+/* ======= Main Section ======= */
+.add-new-vehicle p {
+    margin: 0;
+    padding: 0;
+}
+
+.add-new-vehicle p a {
+    color: #666872;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.3s ease;
+    animation-duration: 0ms;
+}
+
+.add-new-vehicle p a:hover {
+    color: #b22222;
+}
+
+.add-new-vehicle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 10px 40px;
+    margin-bottom: 25px;
+}
+
+.add-new-vehicle div {
+    grid-column: 1 / -1; 
+}
+/* ======= Main Section ======= */
+
+/* ======= Filter Section ======= */
+#filter-section {
+    height: 316px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 6px 50px 0px #0000001A;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background-color: var(--primary-white);
+    cursor: pointer;
+    transition: 300ms;
+    color: #000;
+}
+
+select:hover {
+    background-color: #eaebf0;
+}
+
+.price-range {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.price-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#price-min,
+#price-max {
+    width: 80%;
+    padding: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background: #F8F8F8;
+}
+
+label {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#filter-section h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+
+#filter-section h1 {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #333;
+}
+
+/* ======= Filter Section ======= */
+
+/* ======= Products Section ======= */
+#products-section{
+    height: 316px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 6px 50px 0px #0000001A;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+#products-section ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#products-section ul li button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #A2001D;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center; 
+}
+
+#products-section ul li button:hover {
+    background-color: var(--primary-dark);
+}
+
+#products-section ul li img {
+    max-width: 100%;
+    height: auto;/* Siguron që proporcioni i imazhit të ruhet */
+    object-fit: contain; /* Siguron që i gjithë imazhi të duket */
+}
+
+#products-section ul li span {
+    margin-right: 10px; 
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#products-section h1 {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #333;
+}
+
+/* ======= Products Section ======= */
+
+/* ======= Cart Section ======= */
+#cart-section{
+    height: 316px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 6px 50px 0px #0000001A;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#cart-section ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 10px; 
+    padding: 10px;
+}
+
+#cart-section ul li button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #A2001D;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; 
+}
+
+#cart-section ul li button:hover {
+    background-color: var(--primary-dark);
+}
+
+#cart-section ul li img {
+    max-width: 100%;
+    height: auto;/* Siguron që proporcioni i imazhit të ruhet */
+    object-fit: contain; /* Siguron që i gjithë imazhi të duket */
+}
+
+#cart-section ul li span {
+    flex-grow: 1;
+    margin-right: 10px; 
+}
+
+#cart-actions button{
+    margin-right: 10px;
+    margin-top: 8px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #A2001D;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cart-actions button:hover {
+    background-color: var(--primary-dark);
+}
+
+#cart-section h1 {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #333;
+}
+
+/* ======= Cart Section ======= */
+
+/* ======= Add Vehicle Section ======= */
+#add-car-section {
+    height: 316px;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 6px 50px 0px #0000001A;
+}
+
+.mark-model{
+    margin-top: -15px;
+}
+
+#mark {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background-color: #F8F8F8;
+    cursor: pointer;
+    transition: 300ms;
+    color: #000;
+}
+
+#model{
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background-color: #F8F8F8;
+    cursor: pointer;
+    transition: 300ms;
+    color: #000;
+}
+
+.price-url {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.price-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#price{
+    width: 80%;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background: #F8F8F8;
+}
+
+#image-url {
+    width: 80%;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    background: #F8F8F8;
+}
+
+#add-vehicle-button{
+    margin-top: 8px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #A2001D;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-vehicle-button:hover {
+    background-color: var(--primary-dark);
+}
+
+#add-car-section h1 {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #333;
+}
+
+/* ======= Add Vehicle Section ======= */
+
+/* ======= Payment Section ======= */
+.payment-section {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.payment-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.payment-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+hr {
+    width: 100%;
+    color:#ACACAC;
+    margin-bottom: 30px;
+}
+
+#card-number {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1.5px solid #ACACAC;
+    background-color: #F8F8F8;
+    color: #000;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.expiration-cvv-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.expiration-cvv-container input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} 
+
+
+#expiration-date {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1.5px solid #ACACAC;
+    background-color: #F8F8F8;
+    color: #000;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+#cvv {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1.5px solid #ACACAC;
+    background-color: #F8F8F8;
+    color: #000;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.payment-content button{
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #A2001D;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-content button:hover {
+    background-color: var(--primary-dark);
+}
+
+.payment-content p{
+    color: #ACACAC;
+}
+
+.payment-content p:hover{
+    color: #A2001D;
+}
+
+/* ======= Payment Section ======= */
+
+/* ======= Payment Successfull Section ======= */
+.payment-success-section {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    opacity: 1; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    width: 100%; 
+    height: 100%; 
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-success-section div {
+    background-color: #fff;
+    width: 684px;
+    height: 228px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-success-section div h1 {
+    font-size: 26px;
+    color: var(--primary-dark);
+    font-weight: 400;
+}
+
+.payment-success-section div p {
+    font-size: 84px;
+    color: #57B63F;
+}
+/* ======= Payment Successfull Section ======= */
